@@ -2,12 +2,7 @@ var app = require('express')()
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
 
-//server.listen(3000)
-
-
-app.listen(3000, function() {
-  console.log('Node app is running on port 3000');
-});
+server.listen(3000)
 
 module.exports = app;
 app.get('/rooms', function(req, res) {
