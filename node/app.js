@@ -6,11 +6,11 @@ var io = require('socket.io')(server)
 
 app.set('port', process.env.PORT || 5000);
 
-io.listen(process.env.PORT)
-
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
+io.listen(app)
 
 module.exports = app;
 
