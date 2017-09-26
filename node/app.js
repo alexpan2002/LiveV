@@ -2,7 +2,7 @@ var app = require('express')()
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
 
-server.listen(3000)
+server.listen(5000)
 
 module.exports = app;
 app.get('/rooms', function(req, res) {
@@ -61,4 +61,4 @@ io.on('connection', function(socket) {
 
 })
 
-console.log('listening on port 3000...')
+console.log('listening on port 5000...')
