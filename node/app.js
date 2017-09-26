@@ -2,9 +2,15 @@ var app = require('express')()
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
 
-server.listen(5000)
+//server.listen(5000)
+
+
+app.listen(5000, function() {
+  console.log('Node app is running on port 5000');
+});
 
 module.exports = app;
+
 app.get('/rooms', function(req, res) {
   var roomList = Object.keys(rooms).map(function(key) {
     return rooms[key]
@@ -61,4 +67,4 @@ io.on('connection', function(socket) {
 
 })
 
-console.log('listening on port 5000...')
+//console.log('listening on port 5000...')
